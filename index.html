@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+    <a href="index.html" class="logo">UMMU BALQIS</a>
+    <nav class="navbar">
+        <a href="index.html" class="active">Home</a>
+        <a href="aboutme.html">About me</a>
+        <a href="family.html">Family</a>
+        <a href="friends.html">Friends</a>
+        <a href="education.html">Education</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="hobby.html">Hobby</a>
+    </nav>
+</header>
+
+<section class="home">
+    <div class="home-content">
+        <h1>Hello and welcome to my website!✨</h1>
+        <p>I'm glad you're here. Take your time to wander through and see what catches your eye. Enjoy your visit! 🌟</p>
+        <div class="btn-box">
+            <a href="aboutme.html">About me</a>
+            <a href="quotetastic.html">Quotetastic!</a> 
+        </div>
+    </div>
+
+    <!-- CSS-only Slider Section -->
+    <div class="slider-container">
+        <div class="slider-wrapper">
+            <div class="slider-item"><img src="image/slider1.jpg" class="slider-img" alt="Slider Image 1"></div>
+            <div class="slider-item"><img src="image/slider2.jpg" class="slider-img" alt="Slider Image 2"></div>
+            <div class="slider-item"><img src="image/slider3.jpg" class="slider-img" alt="Slider Image 3"></div>
+            <div class="slider-item"><img src="image/slider5.jpg" class="slider-img" alt="Slider Image 5"></div>
+        </div>
+    </div>
+    <!-- End of CSS-only Slider Section -->
+
+</section>
+
+<!-- Quotetastic Section -->
+<section id="quotetastic">
+    <div class="quote-box">
+        <p id="quoteDisplay">Click the button to see a quote!</p>
+    </div>
+</section>
+
+<div class="home-sci">
+    <a href="https://wa.me/0196279546"><i class='bx bxl-whatsapp'></i></a>
+    <a href="https://www.tiktok.com/@strawberryandrose0"><i class='bx bxl-tiktok'></i></a>
+    <a href="https://www.instagram.com/ummubqs_"><i class='bx bxl-instagram' ></i></a>
+</div>
+
+<!-- Background Audio and Play Button -->
+<audio id="background-audio" src="audio/audioindex.mp3" loop></audio>
+<button id="playButton" title="Play background music"><i class="bx bx-music" title="Play background music"></i></button>
+
+<!-- Script for CSS-only Slider -->
+<script>
+    let slideIndex = 0;
+
+    function showSlides() {
+        const sliderWrapper = document.querySelector('.slider-wrapper');
+        slideIndex++;
+
+        if (slideIndex >= sliderWrapper.children.length) {
+            slideIndex = 0;
+        }
+
+        sliderWrapper.style.transform = `translateX(-${slideIndex * 100}%)`;
+        setTimeout(showSlides, 3000); // Change slide every 3 seconds (adjust as needed)
+    }
+
+    showSlides(); // Start the slider
+</script>
+
+<!-- Script for Background Audio -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const audio = document.getElementById('background-audio');
+        const playButton = document.getElementById('playButton');
+
+        playButton.addEventListener('click', () => {
+            audio.play().catch(error => {
+                console.log('Play was prevented:', error);
+            });
+            playButton.style.display = 'none'; 
+        });
+    });
+</script>
+
+</body>
+</html>
+

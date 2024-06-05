@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #000000;
+    color: #ededed;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: linear-gradient(to right, #C22ED0, #D4A656, #E16E79, #228FCF);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: #ededed; 
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #000000;
+}
+
+.friends {
+    padding-top: 60px; /* Reduce top padding to bring the heading closer to the header */
+    color: #ededed;
+}
+
+.friends h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    position: relative; /* Add relative positioning to allow z-index to work */
+    z-index: 1; /* Ensure the headings are above other elements */
+    text-align: center; /* Center the heading */
+}
+
+.friend-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    gap: 20px; /* Add some space between friend items */
+    justify-content: center; /* Center items horizontally */
+    width: 100%; /* Ensure the container takes the full width */
+    padding: 0 10px; /* Optional: add a small padding to avoid items touching the edges */
+    box-sizing: border-box; /* Ensure padding is included in the width calculation */
+}
+
+.friend {
+    position: relative;
+    cursor: pointer;
+    flex: 1 1 calc(33.333% - 20px); /* Flex items to take 1/3rd of the container width minus the gap */
+    max-width: calc(33.333% - 20px); /* Ensure each item does not exceed 1/3rd of the container width minus the gap */
+    box-sizing: border-box; /* Include padding and border in the width and height */
+    text-align: center; /* Center the text inside each friend item */
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.friend h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #ededed;
+}
+
+.friend p {
+    margin: 0;
+    font-size: 1em;
+    color: #ededed;
+}
+
+.friend-img,
+.second-img {
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.second-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+}
+
+.friend:hover .friend-img {
+    opacity: 0;
+}
+
+.friend:hover .second-img {
+    opacity: 1;
+}

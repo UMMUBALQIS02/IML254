@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotetastic</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="quotetastic.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #000000;
+            color: #ededed;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background: linear-gradient(to right, #C22ED0, #D4A656, #E16E79, #228FCF);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 25px;
+            color: #ededed;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .navbar a {
+            font-size: 18px;
+            color: #ededed;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+            transition: .3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #000000;
+        }
+
+        .quote-content {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .quote-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .quote-content p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #C22ED0;
+        }
+
+        #quoteDisplay {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #ededed;
+        }
+
+        #quoteButton {
+            background-color: #C22ED0;
+            color: #000000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #quoteButton:hover {
+            background-color: #D4A656;
+        }
+
+        #playButton {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #C22ED0;
+            color: #000000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #playButton:hover {
+            background-color: #D4A656;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <a href="index.html" class="logo">UMMU BALQIS</a>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="aboutme.html">About me</a>
+        <a href="family.html">Family</a>
+        <a href="friends.html">Friends</a>
+        <a href="education.html">Education</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="hobby.html">Hobby</a>
+    </nav>
+</header>
+
+<section class="quote-content">
+    <h1>Welcome to Quotetastic!✨</h1>
+    <p id="quoteDisplay">Click the button to see a quote!</p>
+    <button id="quoteButton">Show me a quote</button>
+</section>
+
+<!-- Audio element for background music -->
+<audio id="background-audio" src="audio/piano.mp3" loop></audio>
+<button id="playButton">🎵</button>
+
+<script>
+    const quotes = [
+        "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
+        "The way to get started is to quit talking and begin doing. - Walt Disney",
+        "Your time is limited, so don't waste it living someone else's life. - Steve Jobs",
+        "If life were predictable it would cease to be life, and be without flavor. - Eleanor Roosevelt",
+        "If you look at what you have in life, you'll always have more. - Oprah Winfrey",
+        "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success. - James Cameron"
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const quoteDisplay = document.getElementById('quoteDisplay');
+        const quoteButton = document.getElementById('quoteButton');
+        const audio = document.getElementById('background-audio');
+        const playButton = document.getElementById('playButton');
+
+        quoteButton.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            quoteDisplay.textContent = quotes[randomIndex];
+        });
+
+        playButton.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playButton.textContent = "🎵";
+            } else {
+                audio.pause();
+                playButton.textContent = "🎵";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

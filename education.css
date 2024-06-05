@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url(image/bgbook.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 5%; /* Adjust padding to make the header smaller */
+    background: linear-gradient(to right, #C22ED0, #D4A656, #E16E79, #228FCF);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: #ededed; 
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #000000;
+}
+
+.education {
+    padding: 100px 10%;
+    color: #ededed;
+    text-align: center;
+}
+
+.education h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: space-between; /* Distribute logos evenly */
+}
+
+.logo {
+    flex-basis: calc(33.33% - 20px); /* Adjust spacing between logos */
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.logo img {
+    width: 150px; /* Adjust image size as needed */
+    height: auto;
+}
+
+.animated-image {
+    animation: rotateLogo 5s linear infinite; /* Rotate animation */
+}
+
+.logo-description {
+    font-size: 20px;
+    margin-top: 0px;
+}
+
+@keyframes rotateLogo {
+    from {
+        transform: rotate(0deg); /* Start rotation from 0 degrees */
+    }
+    to {
+        transform: rotate(360deg); /* Rotate 360 degrees */
+    }
+}

@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000;
+    color: #ededed;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: linear-gradient(to right, #C22ED0, #D4A656, #E16E79, #228FCF);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: #ededed; 
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #000000;
+}
+
+.about {
+    margin-top: 20px; /* Adjust this value according to the height of your header */
+    padding: 0; /* Remove padding to eliminate space */
+    text-align: center; /* Center align the content */
+}
+
+.about-info {
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto; /* Center the content horizontally */
+}
+
+.songs {
+    text-align: center; /* Center align the content */
+}
+
+.songs h2 {
+    margin-bottom: 20px; /* Add space below the heading for better visual separation */
+}
+
+.video-container {
+    width: 100%; /* Take up the full width of the viewport */
+    height: 70vh; /* Set the height to 70% of the viewport height */
+    margin-top: 100px; /* Adjusted space from the header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+.video-container video {
+    max-width: 100%; /* Ensure the video fills its container */
+    max-height: 100%; /* Ensure the video fills its container */
+}
+
+.favorites {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 0 10%;
+}
+
+.favorites div {
+    flex: 1;
+    margin-right: 0px;
+}
+
+.favorites div:last-child {
+    margin-right: 0;
+}
+
+.food img,
+.drink img,
+.place img {
+    width: 100%;
+    height: auto;
+}

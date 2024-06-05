@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url(image/bgflower1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: linear-gradient(to right, #C22ED0, #D4A656, #E16E79, #228FCF);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #000000;
+}
+
+.gallery {
+    padding: 100px 0; /* Adjust vertical padding as needed */
+    color: #ededed;
+    text-align: center;  /* Center-align text within the gallery */
+}
+
+
+.category {
+    margin-bottom: 40px;
+}
+
+.category h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.image-container,
+.video-container {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure images and videos stay in a single row */
+    overflow-x: auto; /* Add horizontal scroll for smaller screens */
+    scrollbar-width: none; /* Hide scrollbar */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+}
+
+.image-container::-webkit-scrollbar,
+.video-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+.image-container img,
+.video-container video {
+    width: 200px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add spacing between images and videos */
+}
